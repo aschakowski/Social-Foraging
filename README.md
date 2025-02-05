@@ -7,8 +7,9 @@ Schakowski, A., Deffner, D., Kortet, R., Niemelä, P.T., Kavelaars, M.M., Monk, 
 Paper here: link to preprint
 
 "wrapper_script_social_foraging_dynamics.r" sources all helper scripts and runs analyses. 
-Scripts source raw data stored in "data/raw_data" and store in the folder "data/processed_data". 
+Scripts source raw data stored in "data/raw_data" and store processed data in the folder "data/processed_data".
 Helper scripts for analyses are stored in the folder for the respective sub-paragraph of the manuscript. 
+Figures for each sub-paragraph are stored in the "output" folder in the respective sub-directory.
 
 Software requirements
 
