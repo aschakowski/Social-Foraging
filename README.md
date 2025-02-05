@@ -6,7 +6,7 @@ Schakowski, A., Deffner, D., Kortet, R., Niemelä, P.T., Kavelaars, M.M., Monk, 
 
 Paper here: link to preprint
 
-An additional folder "utils" has to be downloaded first and placed into the main directory: https://drive.google.com/file/d/1v5hiQGHDsQykIeVQ9VgwpQA72pwzI1Lr/view?usp=sharing
+An additional folder "utils" has to be downloaded first and placed into the main directory: https://osf.io/9hcsq/?view_only=5ea9f870de974b198a6cf27ca6fd656d
 
 "wrapper_script_social_foraging_dynamics.r" sources all helper scripts and runs analyses. 
 Scripts source raw data stored in "utils/data/raw_data" and store processed data in the folder "utils/data/processed_data".
