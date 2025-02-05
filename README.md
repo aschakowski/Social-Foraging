@@ -8,6 +8,7 @@ Paper here: link to preprint
 
 "wrapper_script_social_foraging_dynamics.r" sources all helper scripts and runs analyses. 
 Scripts source raw data stored in "utils/data/raw_data" and store processed data in the folder "utils/data/processed_data".
+"utils" directory needs to be unzipped before running analyses.
 "utils/library/" contains helper functions and loads necessary packages.
 Helper scripts for analyses are stored in the folder for the respective sub-paragraph of the manuscript. 
 Figures for each sub-paragraph are stored in the "output" folder in the respective sub-directory.
