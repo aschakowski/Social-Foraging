@@ -11,9 +11,9 @@
 ################################################################################
 # set working directory
 if (Sys.info()[1] == "Linux"){
-  wd="/mnt/home/schakowski/Projects/IceFishing/icefishing_git"
+  wd="/mnt/home/schakowski/Projects/IceFishing/icefishing_git - Kopie"
 } else {
-  wd="P:/IceFishing/icefishing_git"
+  wd="P:/IceFishing/icefishing_git - Kopie"
 }
 
 if (getwd() != wd){
@@ -71,6 +71,8 @@ run_4_incremental_strategies(wd)
 
 # The scripts investigates inter--individual differences and produces figures.
 # To see results, run script on its own.
+source("5_inter_individual_differences/wrapper_script_inter_ind_differences.R")
+run_5_inter_individual_differences(wd)
 
 ################################################################################
 # END
