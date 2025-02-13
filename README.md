@@ -4,9 +4,9 @@ This repository contains the data and scripts necessary to reproduce all analyse
 
 Schakowski, A., Deffner, D., Kortet, R., Niemelä, P.T., Kavelaars, M.M., Monk, C.T., Pykälä, M., & Kurvers, R.H.J.M (2025) Socioecology drives adaptive social foraging dynamics in the wild.
 
-The raw GPS and video data is available upon request. 
-
 Paper here: link to preprint
+
+The raw GPS and video data is available upon request. 
 
 "wrapper_script_social_foraging_dynamics.r" sources all helper scripts and runs analyses. 
 Scripts source raw data stored in "utils/data/raw_data" and store processed data in the folder "utils/data/processed_data".
