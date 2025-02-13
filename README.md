@@ -1,8 +1,10 @@
 # Social-Foraging
 
-This repository contains the full data and scripts to reproduce all analyses and figures for:
+This repository contains the data and scripts necessary to reproduce all analyses and figures for:
 
 Schakowski, A., Deffner, D., Kortet, R., Niemelä, P.T., Kavelaars, M.M., Monk, C.T., Pykälä, M., & Kurvers, R.H.J.M (2025) Socioecology drives adaptive social foraging dynamics in the wild.
+
+The raw GPS and video data is available upon request. 
 
 Paper here: link to preprint
 
