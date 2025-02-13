@@ -8,6 +8,8 @@ Paper here: link to preprint
 
 The raw GPS and video data is available upon request. 
 
+To reproduce analyses, an additional folder "utils" has to be downloaded from OSF (), unzipped and placed into the same working directory as the remaining folders. 
+
 "wrapper_script_social_foraging_dynamics.r" sources all helper scripts and runs analyses. 
 Scripts source raw data stored in "utils/data/raw_data" and store processed data in the folder "utils/data/processed_data".
 "utils" directory needs to be unzipped before running analyses.
