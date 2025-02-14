@@ -4,7 +4,7 @@
 #
 # Authors: Schakowski, A.
 #
-# Last updated: 27/07/2024 (DD/MM/YYYY)
+# Last updated: 14/02/2025 (DD/MM/YYYY)
 #
 ################################################################################
 run_model_comparison_spot_selection <- function(){
