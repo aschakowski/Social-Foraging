@@ -11,9 +11,9 @@
 ################################################################################
 # set working directory
 if (Sys.info()[1] == "Linux"){
-  wd="/mnt/home/schakowski/Projects/IceFishing/icefishing_git_share"
+  wd="add your working directory here; this was run on a fileserver with different wd depending on system"
 } else {
-  wd="P:/IceFishing/icefishing_git_share"
+  wd="add your working directory here"
 }
 
 if (getwd() != wd){
