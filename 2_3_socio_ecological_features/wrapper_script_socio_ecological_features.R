@@ -1,15 +1,15 @@
 ################################################################################
 #
-# Title: Descriptive Analyses and Figures
+# Title: Wrapper Script Socio-ecological features
 #
 # Description: Run analyses and visualize results
 #
 # Authors: Schakowski, A.
 #
-# Last updated: 29/11/2024 (DD/MM/YYYY)
+# Last updated: 14/02/2025 (DD/MM/YYYY)
 #
 ################################################################################
-run_2_3_socio_ecological_features <- function(wd){
+run_2_3_socio_ecological_features <- function(){
 
 # run model comparison spot selection models
 source("2_3_socio_ecological_features/scripts/run_model_comparison_spot_selection.r")
