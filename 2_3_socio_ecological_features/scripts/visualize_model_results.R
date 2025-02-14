@@ -6,7 +6,7 @@
 #
 # Authors: Schakowski, A.
 #
-# Last updated: 02/04/2024 (DD/MM/YYYY)
+# Last updated: 14/02/2025 (DD/MM/YYYY)
 #
 ################################################################################
 visualize_spot_selection_model <- function(){
