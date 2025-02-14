@@ -6,10 +6,10 @@
 #
 # Authors: Schakowski, A.
 #
-# Last updated: 29/11/2024 (DD/MM/YYYY)
+# Last updated: 14/02/2025 (DD/MM/YYYY)
 #
 ################################################################################
-run_1_icefishing_social_foraging <- function(wd){
+run_1_icefishing_social_foraging <- function(){
 
 ################################################################################
 # load data
