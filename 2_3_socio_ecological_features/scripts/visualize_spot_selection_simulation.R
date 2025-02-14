@@ -2,11 +2,11 @@
 #
 # Title: Visualize spot selection simulation
 #
-# Description: Simulates trajectories for each id based on posterior estimates
+# Description: Visualizes agend based model simulations.
 #
 # Authors: Schakowski, A.
 #
-# Last updated: 02/04/2024 (DD/MM/YYYY)
+# Last updated: 14/02/2025 (DD/MM/YYYY)
 #
 ################################################################################
 visualize_spot_selection_simulation <- function(){
