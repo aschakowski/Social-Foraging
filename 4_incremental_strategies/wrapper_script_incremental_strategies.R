@@ -6,10 +6,10 @@
 #
 # Authors: Schakowski, A.
 #
-# Last updated: 29/11/2024 (DD/MM/YYYY)
+# Last updated: 14/02/2025 (DD/MM/YYYY)
 #
 ################################################################################
-run_4_incremental_strategies <- function(wd){
+run_4_incremental_strategies <- function(){
   
   ##############################################################################
   # run depletion models
