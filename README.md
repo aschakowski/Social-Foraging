@@ -6,8 +6,6 @@ Schakowski, A., Deffner, D., Kortet, R., Niemelä, P.T., Kavelaars, M.M., Monk, 
 
 Paper here: [link to preprint](https://osf.io/preprints/psyarxiv/qbvp9_v2)
 
-The raw GPS and video data is available upon request. 
-
 To reproduce analyses, an additional folder "utils" has to be downloaded from OSF (https://osf.io/9hcsq/), and placed into the same working directory as the remaining folders. 
 
 "wrapper_script_social_foraging_dynamics.r" sources all helper scripts and runs analyses. 
