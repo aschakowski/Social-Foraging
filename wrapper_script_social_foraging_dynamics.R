@@ -11,11 +11,6 @@
 ################################################################################
 # set working directory
 wd = "your_working_directory" #some scripts might only work on windows.
-if (Sys.info()[1] == "Linux"){
-  wd="/mnt/home/schakowski/Projects/IceFishing/r_scripts_repo_upload_final"
-} else {
-  wd="P:/IceFishing/r_scripts_submission_full"
-}
 
 if (getwd() != wd){
   setwd(wd)
