@@ -210,61 +210,6 @@ comparison = loo_compare(loo_list)
 
 # save results
 saveRDS(comparison, file = "utils/data/processed_data/model_fit/spot_selection_models/comparison/comparison_alternative_roughness.rds")
-
-################################################################################
-# REVISION: Grp level predictors for inter-individual differences
-# load stan data
-stan_data = readRDS(file = "utils/data/processed_data/stan_data_spot_selection_grp_level_predictors.rds")
-
-# standardized time since start from 0 to 1
-stan_data$Time_since_start = as.numeric(stan_data$Time_since_start)
-stan_data$Time_since_start = stan_data$Time_since_start / max(stan_data$Time_since_start)
-
-# any 0s in dataset? If so, replace with small value
-stan_data$Distances_social[stan_data$Distances_social == 0] <- .01
-stan_data$Distances_roughness[stan_data$Distances_roughness == 0] <- .01
-stan_data$Distances_success[stan_data$Distances_success == 0] <- .01
-stan_data$Distances_loss[stan_data$Distances_loss == 0] <- .01
-stan_data$Locality[stan_data$Locality == 0] <- .01
-
-# any missings in dataset?
-stan_data$Distances_social[is.na(stan_data$Distances_social)]
-stan_data$Distances_roughness[is.na(stan_data$Distances_roughness)]
-stan_data$Distances_success[is.na(stan_data$Distances_success)]
-stan_data$Distances_loss[is.na(stan_data$Distances_loss)]
-stan_data$Locality[is.na(stan_data$Locality)]
-
-# scale predictors
-stan_data$id_level_predictors = as.matrix(as.data.frame(scale(stan_data$id_level_predictors)))
-stan_data$lake_level_predictors = as.matrix(as.data.frame(scale(stan_data$lake_level_predictors)))
-
-# fit models
-model_locations = c("utils/stan/spot_selection_models/group_level_predictors_spot_selection_id.stan",
-                    "utils/stan/spot_selection_models/group_level_predictors_spot_selection_lake.stan",
-                    "utils/stan/spot_selection_models/group_level_predictors_spot_selection_lake.stan")
-save_locations = c("utils/data/processed_data/model_fit/spot_selection_models/group_level_predictors_id.rds",
-                   "utils/data/processed_data/model_fit/spot_selection_models/group_level_predictors_lake_ft1.rds",
-                   "utils/data/processed_data/model_fit/spot_selection_models/group_level_predictors_lake_ft2.rds")
-
-for (i in 1:length(model_locations)){
-  
-  if (i == 2){
-    stan_data$prd_index = 1
-  } else if (i == 3){
-    stan_data$prd_index = 2
-  }
-  
-  model_fit(model_location = model_locations[i],
-              save_location = save_locations[i],
-              data_list = stan_data,
-              warmup = 10,
-              iterations = 20,
-              chains = 4,
-              fixed_param = F)
-}
-
-
-
 }
 ################################################################################
 # END
