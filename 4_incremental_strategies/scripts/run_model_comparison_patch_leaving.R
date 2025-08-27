@@ -267,40 +267,6 @@ comparison$model_name = ifelse(comparison$model_id == "model1", "GUT",
 # save results
 saveRDS(comparison, file = "utils/data/processed_data/model_fit/patch_leaving_models/comparison/comparison_extended_strategies_lakes.rds")
 
-################################################################################
-# REVISION: Grp level predictors for inter-individual differences
-# load stan data
-stan_data = readRDS(file = "utils/data/processed_data/stan_data_patch_leaving_grp.rds")
-
-# scale predictors
-stan_data$id_level_predictors[,1] = as.matrix(as.data.frame(scale(stan_data$id_level_predictors[,1])))
-stan_data$id_level_predictors[,3] = as.matrix(as.data.frame(scale(stan_data$id_level_predictors[,3])))
-stan_data$lake_level_predictors = as.matrix(as.data.frame(scale(stan_data$lake_level_predictors)))
-
-# fit models
-model_locations = c("utils/stan/patch_leaving_models/group_level_predictors_spot_leaving_id.stan",
-                    "utils/stan/patch_leaving_models/group_level_predictors_spot_leaving_lake.stan",
-                    "utils/stan/patch_leaving_models/group_level_predictors_spot_leaving_lake.stan")
-save_locations = c("utils/data/processed_data/model_fit/patch_leaving_models/group_level_predictors_id.rds",
-                   "utils/data/processed_data/model_fit/patch_leaving_models/group_level_predictors_lake_ft1.rds",
-                   "utils/data/processed_data/model_fit/patch_leaving_models/group_level_predictors_lake_ft2.rds")
-
-for (i in 1:length(model_locations)){
-  
-  if (i == 2){
-    stan_data$prd_index = 1
-  } else if (i == 3){
-    stan_data$prd_index = 2
-  }
-  
-  model_fit(model_location = model_locations[i],
-            save_location = save_locations[i],
-            data_list = stan_data,
-            warmup = 1000,
-            iterations = 2000,
-            chains = 4)
-}
-
 }
 ################################################################################
 # END
