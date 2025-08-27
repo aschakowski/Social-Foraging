@@ -4,7 +4,7 @@ This repository contains the data and scripts necessary to reproduce all analyse
 
 Schakowski, A., Deffner, D., Kortet, R., Niemelä, P.T., Kavelaars, M.M., Monk, C.T., Pykälä, M., & Kurvers, R.H.J.M (preprint) Socioecology drives adaptive social foraging dynamics in the wild.
 
-Paper here: [link to preprint](https://osf.io/preprints/psyarxiv/qbvp9_v1)
+Paper here: [link to preprint](https://osf.io/preprints/psyarxiv/qbvp9_v2)
 
 The raw GPS and video data is available upon request. 
 
