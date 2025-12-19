@@ -6,7 +6,7 @@
 #
 # Authors: Schakowski, A.
 #
-# Last updated: 29/11/2024 (DD/MM/YYYY)
+# Last updated: 19/12/2025 (DD/MM/YYYY)
 #
 ################################################################################
 run_4_incremental_strategies <- function(wd){
@@ -30,10 +30,6 @@ run_4_incremental_strategies <- function(wd){
   # prepare stan data
   source("4_incremental_strategies/scripts/prepare_stan_data_patch_leaving.r")
   prepare_stan_data_patch_leaving()
-  
-  # prepare stan data
-  source("4_incremental_strategies/scripts/prepare_stan_data_patch_leaving_grp_predictors.r")
-  prepare_stan_data_patch_leaving_grp_predictors()
   
   # prepare stan data
   source("4_incremental_strategies/scripts/prepare_stan_data_patch_leaving_grp_predictors.r")
