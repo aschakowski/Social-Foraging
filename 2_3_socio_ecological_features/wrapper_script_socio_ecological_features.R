@@ -1,12 +1,12 @@
 ################################################################################
 #
-# Title: Descriptive Analyses and Figures
+# Title: Wrapper spatial model section 2
 #
 # Description: Run analyses and visualize results
 #
 # Authors: Schakowski, A.
 #
-# Last updated: 29/11/2024 (DD/MM/YYYY)
+# Last updated: 19/12/2025 (DD/MM/YYYY)
 #
 ################################################################################
 run_2_3_socio_ecological_features <- function(wd){
@@ -45,8 +45,14 @@ run_2_3_socio_ecological_features <- function(wd){
   # how many alternative spots to simulate
   N_spots = 50
   
-  # call simulation script
-  if (file.exists("utils/data/processed_data/identifiers_spot_selection.rds")){
+  # call simulation script. Note that the feature matrix included in the utils file
+  # is not identical to the one used in the paper. The code has been rerun to 
+  # ensure reproducibility and new files were created. This means that the model
+  # estimates and simulated locations in the spot-selection model can be diverging
+  # slightly from those reported in the paper. We reran this script multiple times
+  # to ensure that these divergences do not affect the direction, size or 
+  # credibility of any of the effects reported in the paper.
+  if (file.exists("utils/data/processed_data/feature_matrix_spot_selection.rds")){
     #
   } else {
     source("2_3_socio_ecological_features/scripts/simulate_available_spots.r")
