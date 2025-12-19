@@ -243,8 +243,9 @@ visualize_spot_selection_simulation <- function(){
                                        family = lognormal(),
                                        chains = 4,
                                        cores = 4)
-    
-    model_angles_comparison = brms::brm(data = test_data, 
+    test_data2 = plot_model_data %>% 
+    filter(time_since_last_success2 >= 1)
+    model_angles_comparison = brms::brm(data = test_data2, 
                                         formula = brmsformula(absangle ~ 1 + cond + time_since_last_success2+
                                                                 (1 + cond + time_since_last_success2| lake_id) + 
                                                                 (1 + cond + time_since_last_success2| track_id) + 
