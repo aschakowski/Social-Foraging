@@ -6,7 +6,7 @@
 #
 # Authors: Schakowski, A.
 #
-# Last updated: 29/11/2024 (DD/MM/YYYY)
+# Last updated: 19/12/2025 (DD/MM/YYYY)
 #
 ################################################################################
 run_1_icefishing_social_foraging <- function(){
@@ -18,7 +18,7 @@ run_1_icefishing_social_foraging <- function(){
   # dataset contains basic demographics, catch success for each competition and camera/watch ids
   catch_data <- read_csv("utils/data/raw_data/catch_data.csv")
   
-  # data contains survey responses for all participants 
+  # data contains survey responses for all participants (2 missing) 
   survey_data = read_csv("utils/data/raw_data/survey_data.csv")
   
   # data contains information for all foraging locations (ID equivalent to camera_id in other datasets)
@@ -95,7 +95,7 @@ run_1_icefishing_social_foraging <- function(){
     slice(1) %>%
     group_by(year, day) %>% 
     mutate(fished_before = ifelse(fished_before == "y", 1, 0)) %>% 
-    summarize(mean_sex = mean(as.numeric(as.factor(sex))-1, na.rm = T),
+    summarize(mean_sex = 1-mean(as.numeric(as.factor(sex))-1, na.rm = T),
               sex_missing = sum(is.na(sex)),
               mean_age = mean(age, na.rm = T),
               median_age = median(age, na.rm =T ),
@@ -704,6 +704,10 @@ run_1_icefishing_social_foraging <- function(){
   main_effects = ngzi %>% 
     spread_draws(b_Intercept, b_shape_Intercept) %>% 
     mutate(additional_variance = 1 / exp(b_shape_Intercept))
+  main_effects %>% 
+    summarize(mean = mean(additional_variance),
+              lower = quantile(additional_variance, .025),
+              upper = quantile(additional_variance, .975))
   
   overdispersion_plot = ggplot(data = ngzi_plot_data, aes(x = lake, y = additional_variance)) + 
     annotate("rect", ymin = quantile(main_effects$additional_variance, .025), ymax =  quantile(main_effects$additional_variance, .975), xmin = .75, xmax = 10.25,
@@ -1803,15 +1807,15 @@ run_1_icefishing_social_foraging <- function(){
   lat = c(62.62746, 62.59883, 62.56772, 62.36665, 62.66712, 62.35356, 62.75662, 62.62056, 62.68050, 62.84421)
   long = c(29.39998, 29.70948, 29.77903, 29.94114, 29.20515, 29.94607, 29.83124, 29.62019, 29.53324, 29.76650)
   site = c("Kuorinka (2022)", 
-           "Pyhäselka - Linnunlahti (2023)",
-           "Pyhäselka - Koivuniemi (2022)", 
+           "PyhÃ¤selka - Linnunlahti (2023)",
+           "PyhÃ¤selka - Koivuniemi (2022)", 
            "Pieni-Onkamo (2023)", 
            "Viiniranta (2022)", 
            "Suuri-Onkamo (2023)", 
-           "Höytiäinen - Kontiolahti (2022)", 
-           "Pyhäselka - Lautasuo (2023)",
+           "HÃ¶ytiÃ¤inen - Kontiolahti (2022)", 
+           "PyhÃ¤selka - Lautasuo (2023)",
            "Keretinlahti (2022)", 
-           "Höytiäinen - Varparanta (2023)")
+           "HÃ¶ytiÃ¤inen - Varparanta (2023)")
   lakes = data.frame(day = day, 
                      year = year,
                      lat = lat, 
