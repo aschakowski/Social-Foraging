@@ -6,12 +6,12 @@
 #
 # Authors: Schakowski, A.
 #
-# Last updated: 29/11/2024 (DD/MM/YYYY)
+# Last updated: 19/12/2025 (DD/MM/YYYY)
 #
 ################################################################################
 # set working directory
-wd = "your_working_directory" #some scripts might only work on windows.
-
+#note: some scripts might only work on windows.
+wd = "your_working_directory"
 if (getwd() != wd){
   setwd(wd)
 }
@@ -26,7 +26,7 @@ source("utils/library/library.R")
 options(buildtools.check = function(action) TRUE)
 ################################################################################
 # set seed for whole analysis
-set.seed(2608025)
+set.seed(101125)
 
 ################################################################################
 # 1. Ice-fishing competitions to study human social foraging
