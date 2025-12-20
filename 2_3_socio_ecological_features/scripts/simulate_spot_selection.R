@@ -262,10 +262,10 @@ simulate_trajectory <- function(iter=1,
     # select successful spots
     return = spot_sub$Return
     
-    # resample returns
-    if (option != "random"){ #keep sequence for random to match to data later. otherwise only keep number
-      return = sample(return, length(return), replace = F)
-    }
+    # resample returns. seq. kept constant for paper, but results the same if reshuffled.
+    #if (option != "random"){ #keep sequence for random to match to data later. otherwise only keep number
+    #  return = sample(return, length(return), replace = F)
+    #}
     
     # time since start
     time_since_start = spot_sub$time_since_start
