@@ -643,10 +643,8 @@ visualize_spot_selection_model <- function(){
   # visualize model comparison alternative ecological features
   comparison = readRDS(file = "utils/data/processed_data/model_fit/spot_selection_models/comparison/comparison_ecological_features.rds")
   comparison = as.data.frame(comparison)
-  comparison$name = comparison$model
-  comparison$model_id = c(4, 3, 5, 1, 2, 6)
+  comparison$model_id = c(4, 1, 2, 3, 5)
   comparison_ecological_features = comparison %>%
-    filter(model_id != 3) %>% 
     ggplot(aes(x = elpd_diff, y = fct_reorder(name, -elpd_diff))) + 
     geom_col(color = "black", width = .6) +
     geom_errorbarh(aes(xmin = elpd_diff - 4*se_diff, xmax = elpd_diff + 4*se_diff), height = .3, size = .8) + 
