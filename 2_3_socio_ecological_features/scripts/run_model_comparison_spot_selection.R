@@ -120,12 +120,14 @@ for (i in 1:length(model_locations)){
   } else {
     
     # subset correct features for alternative eco feature models (suppl. text.)
-    if (i == 6){
+    if (i == 7){
       stan_data$feature_index = 1
-    } else if (i == 7){
-      stan_data$feature_index = 2
     } else if (i == 8){
+      stan_data$feature_index = 2
+    } else if (i == 9){
       stan_data$feature_index = 3
+    } else if (i == 10){
+      stan_data$feature_index = 1
     }
     
     model_fit(model_location = model_locations[i],
@@ -190,11 +192,9 @@ saveRDS(comparison, file = "utils/data/processed_data/model_fit/spot_selection_m
 # run model comparison for alternative roughness features
 fit_locations = c("utils/data/processed_data/model_fit/spot_selection_models/g_alternative_roughness_variance.rds",
                   "utils/data/processed_data/model_fit/spot_selection_models/g_alternative_roughness_min_max.rds",
-                  "utils/data/processed_data/model_fit/spot_selection_models/g_alternative_roughness_mean_dist.rds",
                   "utils/data/processed_data/model_fit/spot_selection_models/h_roughness_depth_fit.rds")
 save_locations = c("utils/data/processed_data/model_fit/spot_selection_models/comparison/g_alternative_roughness_variance.rds",
                    "utils/data/processed_data/model_fit/spot_selection_models/comparison/g_alternative_roughness_min_max.rds",
-                   "utils/data/processed_data/model_fit/spot_selection_models/comparison/g_alternative_roughness_mean_dist.rds",
                    "utils/data/processed_data/model_fit/spot_selection_models/comparison/h_roughness_depth_fit.rds")
 
 for (i in 1:length(fit_locations)){
@@ -206,12 +206,16 @@ for (i in 1:length(fit_locations)){
 loo_list = list(readRDS("utils/data/processed_data/model_fit/spot_selection_models/comparison/c_no_personal.rds"), 
                 readRDS(save_locations[1]), 
                 readRDS(save_locations[2]), 
-                readRDS(save_locations[3]), 
-                readRDS(save_locations[4]))
+                readRDS(save_locations[3]),
+                readRDS("utils/data/processed_data/model_fit/spot_selection_models/comparison/b_no_roughness.rds"))
 comparison = loo_compare(loo_list)
 
+# add model names
+comparison = as.data.frame(comparison)
+comparison$name = c("Roughness x\nDepth","Dist. to\nIsocline", "SD(Depth)", "No Roughness", "Min-Max Depth")
+
 # save results
-saveRDS(comparison, file = "utils/data/processed_data/model_fit/spot_selection_models/comparison/comparison_alternative_roughness.rds")
+saveRDS(comparison, file = "utils/data/processed_data/model_fit/spot_selection_models/comparison/comparison_ecological_features.rds")
 }
 ################################################################################
 # END
