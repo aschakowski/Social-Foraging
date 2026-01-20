@@ -52,7 +52,7 @@ visualize_spot_selection_simulation <- function(){
   
   # use median for summaries bc of skewed distributions
   # results are same on log scale.
-  # for means, predictions are a bit off numerically (due to long-range outliers), 
+  # for means, results are more clear than for medians (esp. comparison social/nonsocial), 
   # but still capture the relevant patterns.
   n_fun <- function(x){
     return(data.frame(y = median(x), label = paste0(length(x),"\n\n")))
