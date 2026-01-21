@@ -505,6 +505,9 @@ saveRDS(regression_list_plot_eco, file = "utils/data/processed_data/eco_regressi
 # note. exact numerical estimates not reproducible because of random simulation of
 # alternative locations. Spots were simulated multiple times to ensure that
 # the reported effects are not affected in size, direction or credibility.
+# With some random seeds, the effects of avg catch/%success on roughness/social 
+# are credible, on some they are not, so we did not interpret these effects in the
+# main text.
 regression_list_plot_eco %>% 
   group_by(name, Predictor) %>% 
   dplyr::summarize(mean = mean(Estimate),
